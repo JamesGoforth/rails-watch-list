@@ -43,7 +43,7 @@
       <% end %>
       <% @list.reviews.each do |review| %>
         <div>
-          <% review.rating.times do %>
+          <% review.rating do %>
             <i class="fas fa-star star-yellow"></i>
           <% end %>
           <small><em class="text-muted"><%= distance_of_time_in_words_to_now(review.created_at) %> ago</em></small>
@@ -63,6 +63,10 @@
       </div>
     </div>
   </div>
+</div>
+
+<div class="footer bg-white p-2 fixed-bottom">
+  <p class="text-muted text-center font-italic">Made by James Goforth ✌️</p>
 </div>
 
 <%= render "bookmarks/modal", list: @list, bookmark: @bookmark %>
